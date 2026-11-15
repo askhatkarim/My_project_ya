@@ -3,3 +3,16 @@ class DataFrameReporter:
         self.float_format = float_format
         self.percent_format = percent_format
         self.include_all = include_all
+
+    def show_report(self, df, title=None):
+        if title is not None:
+            print(title)
+
+        rows, columns = df.shape
+        duplicates = df.duplicated().sum()
+        duplicate_share = duplicates / rows if rows else 0.0
+
+        print('Количество столбцов:', columns)
+        print('Количество строк:', rows)
+        print('Количество дубликатов:', duplicates)
+        print('Доля дубликатов:', format(duplicate_share, self.percent_format))
