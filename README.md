@@ -14,10 +14,16 @@ python -m pip install -r requirements.txt
 
 ## Пример запуска
 
-Выполните команду из корня проекта. Она создаст небольшую таблицу и выведет отчёт.
+Скачайте `payments.csv` из материалов задания в Практикуме и положите его в папку `data/`. Если файл уже лежит по пути `data/payments.csv`, можно сразу запускать отчёт.
+
+Откройте терминал в корне проекта и выполните команды:
 
 ```bash
-python -c 'import pandas as pd; from src.reporter import DataFrameReporter; data = pd.DataFrame({"total": [100, 100, None]}); DataFrameReporter().show_report(data, "Проверочный отчёт")'
+source venv/bin/activate
+python3 main.py
+```
+
+Скрипт выведет отчёт по платежам, включая размеры таблицы, дубликаты, сводную статистику и пропуски.
 ```
 
 В отчёте будет 3 строки, 1 столбец, 1 дубликат и 1 пропуск.
