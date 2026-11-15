@@ -16,3 +16,4 @@ class DataFrameReporter:
         print('Количество строк:', rows)
         print('Количество дубликатов:', duplicates)
         print('Доля дубликатов:', format(duplicate_share, self.percent_format))
+        print(df.describe(include='all' if self.include_all else None))
